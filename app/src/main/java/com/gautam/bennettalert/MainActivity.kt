@@ -28,9 +28,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-
         navView.setNavigationItemSelectedListener(this)
+        val fragMain=MainFragment()
+        supportFragmentManager.beginTransaction().replace(R.id.appBarMain,fragMain).commit()
     }
+
+
     private var back_pressed: Long = 0
     override fun onBackPressed() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
