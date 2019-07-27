@@ -8,7 +8,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.login_main.*
-import org.jetbrains.anko.toast
+import org.jetbrains.anko.*
 
 class StartUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -22,9 +22,12 @@ class StartUpActivity : AppCompatActivity() {
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
+
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         auth = FirebaseAuth.getInstance()
-
+        loginButton.setOnClickListener {
+            startActivity<MainActivity>()
+        }
         googleSignInButton.setOnClickListener{
             signInWithGoogle()
         }
