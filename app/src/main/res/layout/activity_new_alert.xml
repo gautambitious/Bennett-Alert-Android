@@ -20,6 +20,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginHorizontal="50dp"
             android:layout_marginTop="150dp"
+            android:id="@+id/alertDetailText"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Details"
             app:hintAnimationEnabled="true"
@@ -31,5 +32,33 @@
                 android:layout_height="wrap_content"
                 />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="50dp"
+            android:id="@+id/addressText"
+            android:layout_below="@+id/alertDetailText"
+            android:layout_marginTop="50dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Room Number/Block"
+            app:hintAnimationEnabled="true"
+            android:gravity="center_horizontal"
+    >
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="50dp"
+            android:id="@+id/prioritySpinner"
+            android:layout_below="@+id/addressText"
+    />
 
 </RelativeLayout>
