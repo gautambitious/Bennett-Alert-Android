@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_new_alert.*
+import org.jetbrains.anko.toast
 
 class NewAlertActivity : AppCompatActivity() {
     // local db instance
@@ -31,5 +32,13 @@ class NewAlertActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             prioritySpinner.adapter = adapter
         }
+        cloudDb.collection("Alerts")
+            .add(Alert(123,"","sdsd",true))
+            .addOnSuccessListener {
+                toast("Bro nigga works")
+            }
+            .addOnFailureListener {
+                toast("Bro nigga is bitch")
+            }
     }
 }
