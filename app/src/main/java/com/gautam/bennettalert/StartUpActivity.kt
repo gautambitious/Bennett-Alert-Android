@@ -11,7 +11,9 @@ import kotlinx.android.synthetic.main.login_main.*
 import org.jetbrains.anko.*
 
 class StartUpActivity : AppCompatActivity() {
-    private lateinit var auth: FirebaseAuth
+    val auth by lazy{
+        FirebaseAuth.getInstance()
+    }
     // [END declare_auth]
     private lateinit var googleSignInClient: GoogleSignInClient
 
@@ -24,7 +26,6 @@ class StartUpActivity : AppCompatActivity() {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
-        auth = FirebaseAuth.getInstance()
         loginButton.setOnClickListener {
             startActivity<MainActivity>()
         }

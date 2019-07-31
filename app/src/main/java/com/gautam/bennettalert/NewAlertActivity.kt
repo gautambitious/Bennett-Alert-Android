@@ -3,14 +3,23 @@ package com.gautam.bennettalert
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_new_alert.*
 
 class NewAlertActivity : AppCompatActivity() {
+    // local db instance
+    val localDb by lazy {
+        AlertDatabase.createDatabase(this)
+    }
+
+    // firebase db instance
+    val cloudDb=FirebaseFirestore.getInstance()
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_alert)
-
         // Drop Down Menu Adapter
         ArrayAdapter.createFromResource(
             this,
