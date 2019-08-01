@@ -7,13 +7,21 @@ import com.google.android.gms.auth.api.signin.*
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.login_main.*
 import org.jetbrains.anko.*
+import android.media.RingtoneManager
+
+
 
 class StartUpActivity : AppCompatActivity() {
     val auth by lazy{
         FirebaseAuth.getInstance()
     }
+    val cloudDb by lazy {
+        FirebaseFirestore.getInstance()
+    }
+
     // [END declare_auth]
     private lateinit var googleSignInClient: GoogleSignInClient
 
@@ -32,6 +40,7 @@ class StartUpActivity : AppCompatActivity() {
         googleSignInButton.setOnClickListener{
             signInWithGoogle()
         }
+
     }
 
     private fun signInWithGoogle() {
@@ -63,5 +72,11 @@ class StartUpActivity : AppCompatActivity() {
 
     companion object{
         const val RC_SIGN_IN=1234
+    }
+
+    fun playRing(){
+        val notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+        val r = RingtoneManager.getRingtone(applicationContext, notification)
+        r.play()
     }
 }

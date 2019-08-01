@@ -2,6 +2,7 @@ package com.gautam.bennettalert
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
@@ -41,5 +42,26 @@ class NewAlertActivity : AppCompatActivity() {
             .addOnFailureListener {
                 toast("Bro nigga is bitch")
             }
+
+        cloudUpdate()
+    }
+
+     private fun cloudUpdate() {
+        val docRef=cloudDb.collection("Alerts")
+//            docRef.addSnapshotListener { snapshot, e ->
+//            if (e != null) {
+//                Log.w(TAG, "Listen failed.", e)
+//                return@addSnapshotListener
+//            }
+//
+//            if (snapshot != null && snapshot.exists()) {
+//                Log.d(TAG, "Current data: ${snapshot.data}")
+//            } else {
+//                Log.d(TAG, "Current data: null")
+//            }
+//        }
+    }
+    companion object{
+        const val TAG="workk"
     }
 }
