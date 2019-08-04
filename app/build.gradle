@@ -49,5 +49,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:20.2.0'
 
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Facebook shimmer effect
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 }
 apply plugin: 'com.google.gms.google-services'

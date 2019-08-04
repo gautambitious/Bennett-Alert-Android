@@ -34,14 +34,14 @@ class NewAlertActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             prioritySpinner.adapter = adapter
         }
-        cloudDb.collection("Alerts")
-            .add(Alert(123,"","sdsd",true))
-            .addOnSuccessListener {
-                toast("Bro nigga works")
-            }
-            .addOnFailureListener {
-                toast("Bro nigga is bitch")
-            }
+//        cloudDb.collection("Alerts")
+//            .add(Alert(123,"","sdsd",true))
+//            .addOnSuccessListener {
+//                toast("Bro nigga works")
+//            }
+//            .addOnFailureListener {
+//                toast("Bro nigga is bitch")
+//            }
 
         cloudUpdate()
     }
