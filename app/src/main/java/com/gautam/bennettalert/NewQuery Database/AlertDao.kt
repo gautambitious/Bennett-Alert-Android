@@ -12,5 +12,7 @@ interface AlertDao{
 
     @Query("select * from Alert")
     fun getAllAlerts(): LiveData<List<Alert>>
-    
+
+    @Query("select max(queryId) from Alert")
+    fun getMaxId(): Int
 }

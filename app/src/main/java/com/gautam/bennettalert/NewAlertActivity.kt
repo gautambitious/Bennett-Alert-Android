@@ -14,7 +14,7 @@ class NewAlertActivity : AppCompatActivity() {
     val localDb by lazy {
         AlertDatabase.createDatabase(this)
     }
-
+    val queryId=localDb.alertDao().getMaxId()+1
     // firebase db instance
     val cloudDb=FirebaseFirestore.getInstance()
 
@@ -48,7 +48,7 @@ class NewAlertActivity : AppCompatActivity() {
     }
 
     private fun saveNewAlertToLocal() {
-        val a=Alert(0,"ad","ads",true)
+        val a=Alert(localDb.alertDao().getMaxId(),"ad","ads",true)
         localDb.alertDao().insertRow(a)
     }
 
