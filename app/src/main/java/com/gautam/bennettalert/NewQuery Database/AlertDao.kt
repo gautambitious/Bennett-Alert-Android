@@ -12,4 +12,5 @@ interface AlertDao{
 
     @Query("select * from Alert")
     fun getAllAlerts(): LiveData<List<Alert>>
+    
 }

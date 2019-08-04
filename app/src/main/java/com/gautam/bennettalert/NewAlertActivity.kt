@@ -34,8 +34,9 @@ class NewAlertActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             prioritySpinner.adapter = adapter
         }
-//        cloudDb.collection("Alerts")
-//            .add(Alert(123,"","sdsd",true))
+        saveNewAlertToLocal()
+//        cloudDb.collection("Alerts").document("new")
+//            .set(Alert(123,"","sdsd",true))
 //            .addOnSuccessListener {
 //                toast("Bro nigga works")
 //            }
@@ -46,7 +47,12 @@ class NewAlertActivity : AppCompatActivity() {
         cloudUpdate()
     }
 
-     private fun cloudUpdate() {
+    private fun saveNewAlertToLocal() {
+        val a=Alert(0,"ad","ads",true)
+        localDb.alertDao().insertRow(a)
+    }
+
+    private fun cloudUpdate() {
         val docRef=cloudDb.collection("Alerts")
 //            docRef.addSnapshotListener { snapshot, e ->
 //            if (e != null) {
