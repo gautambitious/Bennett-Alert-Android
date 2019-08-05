@@ -16,6 +16,7 @@
             android:layout_above="@+id/PasswordText"
             android:id="@+id/emailText"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
             app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -57,31 +58,30 @@
             android:id="@+id/loginButton"
             android:padding="15dp"
             android:layout_marginTop="50dp"
-            android:textSize="20sp"
+            android:textSize="13sp"
             android:background="@drawable/button_background"
             android:text="Sign In"
-    />
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/phoneSignInButton"
-            android:padding="15dp"
-            android:gravity="center_horizontal"
-           android:layout_alignParentLeft="true"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            android:background="@drawable/button_background"
-            android:text="Sign In using phone number"
-            android:layout_toLeftOf="@+id/googleSignInButton"
-            android:layout_below="@+id/loginButton"
     />
     <com.google.android.gms.common.SignInButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/googleSignInButton"
+            android:layout_centerHorizontal="true"
             android:layout_below="@+id/loginButton"
-            android:layout_alignParentRight="true"
             android:layout_marginTop="20dp"
+    />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/phoneSignInButton"
+            android:padding="15dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textSize="15sp"
+            android:background="@drawable/button_background"
+            android:text="Sign In using phone number"
+            android:layout_below="@+id/googleSignInButton"
     />
 
 </RelativeLayout>

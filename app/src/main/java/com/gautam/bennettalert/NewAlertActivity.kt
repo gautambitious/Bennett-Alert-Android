@@ -14,7 +14,7 @@ class NewAlertActivity : AppCompatActivity() {
     val localDb by lazy {
         AlertDatabase.createDatabase(this)
     }
-    val queryId=localDb.alertDao().getMaxId()+1
+//    val queryId=localDb.alertDao().getMaxId()+1
     // firebase db instance
     val cloudDb=FirebaseFirestore.getInstance()
 
@@ -34,7 +34,7 @@ class NewAlertActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             prioritySpinner.adapter = adapter
         }
-        saveNewAlertToLocal()
+//        saveNewAlertToLocal()
 //        cloudDb.collection("Alerts").document("new")
 //            .set(Alert(123,"","sdsd",true))
 //            .addOnSuccessListener {
@@ -55,10 +55,10 @@ class NewAlertActivity : AppCompatActivity() {
     private fun cloudUpdate() {
         val docRef=cloudDb.collection("Alerts").document("new").get().addOnSuccessListener {
             toast("works")
+//            Log.i(TAG,it.data.toString())
         }.addOnFailureListener {
             toast("lol")
         }
-        Log.i(TAG,docRef.toString())
 //            docRef.addSnapshotListener { snapshot, e ->
 //            if (e != null) {
 //                Log.w(TAG, "Listen failed.", e)
