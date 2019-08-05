@@ -5,9 +5,14 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import com.google.firebase.database.ChildEventListener
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_new_alert.*
 import org.jetbrains.anko.coroutines.experimental.asReference
+import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 
 class NewAlertActivity : AppCompatActivity() {
@@ -17,7 +22,7 @@ class NewAlertActivity : AppCompatActivity() {
     }
 //    val queryId=localDb.alertDao().getMaxId()+1
     // firebase db instance
-    val cloudDb=FirebaseFirestore.getInstance()
+    val cloudDb=FirebaseDatabase.getInstance().reference
 
 
 
@@ -35,7 +40,6 @@ class NewAlertActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             prioritySpinner.adapter = adapter
         }
-        cloudDb.collection("alert")
 //        saveNewAlertToLocal()
 //        cloudDb.collection("Alerts").document("new")
 //            .set(Alert(123,"","sdsd",true))
@@ -55,14 +59,31 @@ class NewAlertActivity : AppCompatActivity() {
     }
 
     private fun cloudUpdate() {
-        val docRef=cloudDb.collection("Alerts").document("new").get().addOnSuccessListener {
-            toast("works")
-//            Log.i(TAG,it.data.toString())
-            val j=it.toObject(Alert::class.java)
-            Log.i(TAG,j.toString())
-        }.addOnFailureListener {
-            toast("lol")
-        }
+     val ref=cloudDb.child("people")
+        ref.addChildEventListener(object : ChildEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                longToast("Didn't work cause $p0")
+            }
+
+            override fun onChildMoved(p0: DataSnapshot, p1: String?) {
+                 //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onChildChanged(p0: DataSnapshot, p1: String?) {
+
+                 //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onChildAdded(p0: DataSnapshot, p1: String?) {
+                longToast("${p0.value}")
+                 //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onChildRemoved(p0: DataSnapshot) {
+               //To change body of created functions use File | Settings | File Templates.
+            }
+
+        })
 //            docRef.addSnapshotListener { snapshot, e ->
 //            if (e != null) {
 //                Log.w(TAG, "Listen failed.", e)

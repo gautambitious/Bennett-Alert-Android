@@ -60,6 +60,4 @@
             android:id="@+id/prioritySpinner"
             android:layout_below="@+id/addressText"
     />
-
-
 </RelativeLayout>
