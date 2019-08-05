@@ -53,7 +53,12 @@ class NewAlertActivity : AppCompatActivity() {
     }
 
     private fun cloudUpdate() {
-        val docRef=cloudDb.collection("Alerts")
+        val docRef=cloudDb.collection("Alerts").document("new").get().addOnSuccessListener {
+            toast("works")
+        }.addOnFailureListener {
+            toast("lol")
+        }
+        Log.i(TAG,docRef.toString())
 //            docRef.addSnapshotListener { snapshot, e ->
 //            if (e != null) {
 //                Log.w(TAG, "Listen failed.", e)
