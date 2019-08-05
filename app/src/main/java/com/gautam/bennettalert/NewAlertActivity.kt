@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_new_alert.*
+import org.jetbrains.anko.coroutines.experimental.asReference
 import org.jetbrains.anko.toast
 
 class NewAlertActivity : AppCompatActivity() {
@@ -34,6 +35,7 @@ class NewAlertActivity : AppCompatActivity() {
             // Apply the adapter to the spinner
             prioritySpinner.adapter = adapter
         }
+        cloudDb.collection("alert")
 //        saveNewAlertToLocal()
 //        cloudDb.collection("Alerts").document("new")
 //            .set(Alert(123,"","sdsd",true))
@@ -56,6 +58,8 @@ class NewAlertActivity : AppCompatActivity() {
         val docRef=cloudDb.collection("Alerts").document("new").get().addOnSuccessListener {
             toast("works")
 //            Log.i(TAG,it.data.toString())
+            val j=it.toObject(Alert::class.java)
+            Log.i(TAG,j.toString())
         }.addOnFailureListener {
             toast("lol")
         }
