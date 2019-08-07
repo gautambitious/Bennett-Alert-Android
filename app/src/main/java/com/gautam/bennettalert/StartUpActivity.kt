@@ -11,7 +11,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.login_main.*
 import org.jetbrains.anko.*
 import android.media.RingtoneManager
-
+import kotlinx.android.synthetic.main.activity_phone_login.*
 
 
 class StartUpActivity : AppCompatActivity() {
@@ -32,7 +32,7 @@ class StartUpActivity : AppCompatActivity() {
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-
+        avi.show()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         loginButton.setOnClickListener {
             startActivity<MainActivity>()
