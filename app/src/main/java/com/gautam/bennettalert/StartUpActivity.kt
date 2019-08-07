@@ -32,7 +32,6 @@ class StartUpActivity : AppCompatActivity() {
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-        avi.show()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         loginButton.setOnClickListener {
             startActivity<MainActivity>()

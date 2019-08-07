@@ -41,14 +41,6 @@ class NewAlertActivity : AppCompatActivity() {
             prioritySpinner.adapter = adapter
         }
 //        saveNewAlertToLocal()
-//        cloudDb.collection("Alerts").document("new")
-//            .set(Alert(123,"","sdsd",true))
-//            .addOnSuccessListener {
-//                toast("Bro nigga works")
-//            }
-//            .addOnFailureListener {
-//                toast("Bro nigga is bitch")
-//            }
 
         cloudUpdate()
     }
