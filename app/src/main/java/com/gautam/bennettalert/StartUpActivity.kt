@@ -40,6 +40,9 @@ class StartUpActivity : AppCompatActivity() {
         googleSignInButton.setOnClickListener{
             signInWithGoogle()
         }
+        phoneSignInButton.setOnClickListener {
+            startActivity<PhoneLoginActivity>()
+        }
 
     }
 
