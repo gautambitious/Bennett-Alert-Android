@@ -21,6 +21,7 @@ private val auth: FirebaseAuth by lazy {
 
         phoneNumberLoginButton.setOnClickListener {
             loginUsingPhone("+91${phoneNumberText.editText?.text}")
+            otpLoading.show()
         }
     }
 
