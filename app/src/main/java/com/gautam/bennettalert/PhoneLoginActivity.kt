@@ -2,6 +2,7 @@ package com.gautam.bennettalert
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.text.isDigitsOnly
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -20,8 +21,19 @@ private val auth: FirebaseAuth by lazy {
         setContentView(R.layout.activity_phone_login)
 
         phoneNumberLoginButton.setOnClickListener {
-            loginUsingPhone("+91${phoneNumberText.editText?.text}")
-            otpLoading.show()
+            val number=phoneNumberText.editText?.text
+            when {
+                number.isNullOrBlank() -> toast("Phone Number Can't be Blank")
+                !number!!.isDigitsOnly() -> { toast("Invalid Phone Number")
+                }
+                else -> {
+                    loginUsingPhone("+91$number")
+                    otpLoading.show()
+                    phoneNumberText.isEnabled=false
+
+                }
+            }
+
         }
     }
 

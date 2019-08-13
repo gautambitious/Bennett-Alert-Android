@@ -46,4 +46,16 @@
             android:id="@+id/phoneNumberLoginButton"
             android:textSize="20sp"
     />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="100dp"
+            android:layout_centerHorizontal="true"
+            android:text="Enter Otp Manually"
+            android:id="@+id/manualOtpText"
+            android:visibility="invisible"
+            android:textSize="20sp"
+    />
 </RelativeLayout>
