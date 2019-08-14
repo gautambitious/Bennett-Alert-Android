@@ -21,6 +21,7 @@
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="phone"
                 android:maxLength="10"
         />
     </com.google.android.material.textfield.TextInputLayout>
@@ -29,8 +30,10 @@
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="8dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/otpText"
+            android:layout_below="@+id/phoneNumberText"
+            android:visibility="invisible"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Enter 10 Digit Phone Number"
     >

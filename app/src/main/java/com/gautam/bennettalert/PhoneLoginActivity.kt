@@ -3,6 +3,7 @@ package com.gautam.bennettalert
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.text.isDigitsOnly
+import androidx.core.view.isVisible
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
@@ -11,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_phone_login.*
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 import java.util.concurrent.TimeUnit
+import kotlin.concurrent.thread
 
 class PhoneLoginActivity : AppCompatActivity() {
 private val auth: FirebaseAuth by lazy {
@@ -19,7 +21,7 @@ private val auth: FirebaseAuth by lazy {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone_login)
-
+        manualOtpButton.isVisible=false
         phoneNumberLoginButton.setOnClickListener {
             val number=phoneNumberText.editText?.text
             when {
@@ -32,7 +34,8 @@ private val auth: FirebaseAuth by lazy {
                     phoneNumberText.isEnabled=false
 
                 }
-            } }
+            }
+        }
         manualOtpButton.setOnClickListener {
             manualOtpButtonFunction()
         }
@@ -40,7 +43,6 @@ private val auth: FirebaseAuth by lazy {
 
     private fun manualOtpButtonFunction() {
         phoneNumberText.isEnabled=false
-        
     }
 
     private fun loginUsingPhone(phoneNumber:String) {
