@@ -24,6 +24,23 @@
                 android:maxLength="10"
         />
     </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="395dp"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="8dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:id="@+id/otpText"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Enter 10 Digit Phone Number"
+    >
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="10"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
     <com.wang.avi.AVLoadingIndicatorView
             android:id="@+id/otpLoading"
             android:layout_width="wrap_content"
@@ -40,22 +57,19 @@
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
             android:layout_centerVertical="true"
-            android:layout_marginTop="100dp"
             android:layout_centerHorizontal="true"
             android:text="Login"
             android:id="@+id/phoneNumberLoginButton"
             android:textSize="20sp"
     />
-    <Button
+    <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_background"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="100dp"
-            android:layout_centerHorizontal="true"
-            android:text="Enter Otp Manually"
-            android:id="@+id/manualOtpText"
-            android:visibility="invisible"
-            android:textSize="20sp"
+            android:text="Enter Otp Manually?"
+            android:layout_above="@+id/phoneNumberLoginButton"
+            android:id="@+id/manualOtpButton"
+            android:layout_alignParentRight="true"
+            android:textSize="15sp"
     />
 </RelativeLayout>

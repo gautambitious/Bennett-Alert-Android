@@ -32,9 +32,15 @@ private val auth: FirebaseAuth by lazy {
                     phoneNumberText.isEnabled=false
 
                 }
-            }
-
+            } }
+        manualOtpButton.setOnClickListener {
+            manualOtpButtonFunction()
         }
+    }
+
+    private fun manualOtpButtonFunction() {
+        phoneNumberText.isEnabled=false
+        
     }
 
     private fun loginUsingPhone(phoneNumber:String) {
