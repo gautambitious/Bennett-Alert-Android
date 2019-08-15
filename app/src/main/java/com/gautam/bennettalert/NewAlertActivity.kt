@@ -1,5 +1,8 @@
 package com.gautam.bennettalert
 
+import android.content.Context
+import android.media.Ringtone
+import android.media.RingtoneManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -41,10 +44,15 @@ class NewAlertActivity : AppCompatActivity() {
             prioritySpinner.adapter = adapter
         }
 //        saveNewAlertToLocal()
-
+//        val ringtone=defaultRingtone
+//        ringtone.play()
         cloudUpdate()
     }
-
+    private val Context.defaultRingtone: Ringtone
+        get() {
+            val uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE)
+            return RingtoneManager.getRingtone(this, uri)
+        }
     private fun saveNewAlertToLocal() {
         val a=Alert(localDb.alertDao().getMaxId(),"ad","ads",true)
         localDb.alertDao().insertRow(a)
