@@ -75,7 +75,7 @@ class NewAlertActivity : AppCompatActivity() {
             }
 
             override fun onChildAdded(p0: DataSnapshot, p1: String?) {
-                longToast("${p0.value}")
+                toast("${p0.value}")
                  //To change body of created functions use File | Settings | File Templates.
             }
 
