@@ -47,6 +47,14 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/PasswordText"
             android:layout_alignParentRight="true"
+            android:text="Not A User? Sign up"
+            android:id="@+id/signUpButton"
+    />
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/signUpButton"
+            android:layout_alignParentRight="true"
             android:text="Forgot Password?"
             android:id="@+id/forgotPasswordButton"
     />
