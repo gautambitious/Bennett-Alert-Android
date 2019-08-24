@@ -13,6 +13,7 @@ import org.jetbrains.anko.*
 import android.media.RingtoneManager
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_phone_login.*
+import java.util.*
 
 
 class StartUpActivity : AppCompatActivity() {
@@ -29,6 +30,9 @@ class StartUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start_up)
+
+        toast(Calendar.DATE)
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
