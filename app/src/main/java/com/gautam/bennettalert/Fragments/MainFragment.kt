@@ -27,11 +27,7 @@ class MainFragment : Fragment() {
             startActivity<NewAlertActivity>()
         }
         view.pastAlertButton.setOnClickListener {
-            Thread {
-                Thread.sleep(5000)
-                toast("Nice")
-            }
-            toast("This works")
+            startActivity<PastAlertActivity>()
         }
         return view
     }
