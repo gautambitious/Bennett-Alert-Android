@@ -11,4 +11,3 @@ data class Alert(
     val queryAddress: String,
     val queryPriorityHigh: Boolean
 )
-

@@ -5,17 +5,14 @@ import android.media.Ringtone
 import android.media.RingtoneManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
-import android.widget.Toast
+import com.gautam.bennettalert.`NewQuery Database`.Alert
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_new_alert.*
-import org.jetbrains.anko.coroutines.experimental.asReference
 import org.jetbrains.anko.longToast
 import org.jetbrains.anko.toast
 
@@ -58,7 +55,7 @@ class NewAlertActivity : AppCompatActivity() {
             return RingtoneManager.getRingtone(this, uri)
         }
     private fun saveNewAlertToLocal() {
-        val a=Alert(localDb.alertDao().getMaxId(),"ad","ads","",true)
+        val a= Alert(localDb.alertDao().getMaxId(),"ad","ads","",true)
         localDb.alertDao().insertRow(a)
     }
 

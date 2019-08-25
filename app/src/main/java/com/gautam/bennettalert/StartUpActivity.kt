@@ -7,14 +7,10 @@ import com.google.android.gms.auth.api.signin.*
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.login_main.*
 import org.jetbrains.anko.*
 import android.media.RingtoneManager
-import android.util.Log
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_phone_login.*
-import java.util.*
 
 
 class StartUpActivity : AppCompatActivity() {
