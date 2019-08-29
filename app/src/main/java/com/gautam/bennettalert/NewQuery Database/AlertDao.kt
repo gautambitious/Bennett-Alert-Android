@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.gautam.bennettalert.`NewQuery Database`.Alert
+import com.gautam.bennettalert.Alert
 
 @Dao
 interface AlertDao{

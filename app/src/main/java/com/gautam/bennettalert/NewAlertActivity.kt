@@ -6,7 +6,7 @@ import android.media.RingtoneManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import com.gautam.bennettalert.`NewQuery Database`.Alert
+import com.gautam.bennettalert.Alert
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -55,8 +55,8 @@ class NewAlertActivity : AppCompatActivity() {
             return RingtoneManager.getRingtone(this, uri)
         }
     private fun saveNewAlertToLocal() {
-        val a= Alert(localDb.alertDao().getMaxId(),"ad","ads","",true)
-        localDb.alertDao().insertRow(a)
+//        val a= Alert(localDb.alertDao().getMaxId(),"ad","ads","",true)
+//        localDb.alertDao().insertRow(a)
     }
 
     private fun cloudUpdate() {
