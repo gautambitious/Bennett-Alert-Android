@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 class AlertAdapter(val context: Context,val list: List<String>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater=LayoutInflater.from(context)
-        val view=inflater.inflate(R.layout.activity_main,parent,false)
+        val view=inflater.inflate(R.layout.alerts_layout,parent,false)
         return MoviesViewHolder(view)
     }
 
