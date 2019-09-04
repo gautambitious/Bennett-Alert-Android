@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_past_alert.*
 import org.jetbrains.anko.toast
@@ -21,8 +22,9 @@ val auth by lazy {
         setContentView(R.layout.activity_past_alert)
         supportActionBar?.title="Past Alerts"
         val list= listOf("","","","","","","","","","")
-//        pastAlerts.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-//        pastAlerts.layoutManager=GridLayoutManager(this,5,LinearLayoutManager.VERTICAL,false)
+        pastAlerts.layoutManager=LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+//        pastAlerts.layoutManager=GridLayoutManager(this,5,LinearLayoutManager.VERTICAL,true)
+//        pastAlerts.layoutManager=StaggeredGridLayoutManager(5,StaggeredGridLayoutManager.VERTICAL)
         pastAlerts.adapter=AlertAdapter(this,list)
 //        val c=Calendar.getInstance()
 //        val fm=SimpleDateFormat("yyyy-MM-dd")
