@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'io.fabric'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 23
     defaultConfig {
         applicationId "com.gautam.bennettalert"
         minSdkVersion 23
